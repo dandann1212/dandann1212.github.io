@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>My Question Bank</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+    h1 { color: #2c3e50; }
+    ul { list-style: none; padding: 0; }
+    li { background: #fff; margin: 10px 0; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    a { color: #2980b9; text-decoration: none; font-weight: bold; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <h1>It works 🎉</h1>
+  <h1>My Question Bank PDFs</h1>
+  <ul id="pdf-list"></ul>
+
+  <script>
+    // Folder containing your PDFs
+    const folder = "david resources os 1st takes/";
+
+    // List all your 12 PDF filenames (with .pdf extensions!)
+    const pdfFiles = [
+      "os 1 assign brief.pdf",
+      "os task 1 ans pass grade guide.pdf",
+      "os task 1 ans dinstintion grade guide.pdf",
+      "os guide on how to ans question.pdf",
+      "os 2 assign brief.pdf",
+      "os virtual machine link.pdf",
+      "os 3 assign brief 3.pdf",
+      "os assign brief 3 risk ass template.pdf",
+      "os task 2 ans dinstinction grade guide.pdf",
+      "os task 2 ans pass grade guide.pdf",
+      "os task 3 ans dinstinction grade guide.pdf",
+      "os task 3 ans pass grade guide.pdf"
+    ];
+
+    const list = document.getElementById("pdf-list");
+
+    pdfFiles.forEach(pdf => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = folder + pdf; // combines folder and filename
+      link.target = "_blank";   // opens in new tab
+      link.textContent = pdf;   // text shown on page
+      li.appendChild(link);
+      list.appendChild(li);
+    });
+  </script>
 </body>
 </html>
